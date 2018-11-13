@@ -84,4 +84,15 @@ describe('BoatDancer', function() {
   });
 });
 
+describe('CoconutDancer', function() {
+  var dancingCoconut;
+  
+  beforeEach(function() {
+    dancingCoconut = new CoconutDancer(10, 20);
+  });
+
+  it('should have a jQuery $node object', function() {
+    expect(dancingCoconut.$node).to.be.an.instanceof(jQuery);
+  });
+});
 

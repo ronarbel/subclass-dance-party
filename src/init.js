@@ -50,6 +50,24 @@ $(document).ready(function() {
     );
     
     $('body').append(boat.$node);
+    
+    window.dancers.push(boat);
+  });
+  
+  $(".addCoconutButton").on('click', function(event) {
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    
+    var coconut = new dancerMakerFunction(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 2000
+    );
+    
+    $('body').append(coconut.$node);
+    
+    window.dancers.push(coconut);
   });
 });
 

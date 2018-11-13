@@ -6,10 +6,3 @@ var BoatDancer = function(top, left, timeBetweenSteps) {
 
 BoatDancer.prototype = Object.create(MakeDancer.prototype);
 BoatDancer.prototype.constructor = BoatDancer;
-BoatDancer.prototype.setPosition = function(top, left) {
-  var styleSettings = {
-    top: top,
-    left: left
-  };
-  this.$node.css(styleSettings);
-}
