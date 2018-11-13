@@ -36,5 +36,20 @@ $(document).ready(function() {
     
     $('body').append(dancer.$node);
   });
+  
+  
+  $(".addBoatButton").on('click', function(event) {
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    
+    var boat = new dancerMakerFunction(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 2000
+    );
+    
+    $('body').append(boat.$node);
+  });
 });
 
