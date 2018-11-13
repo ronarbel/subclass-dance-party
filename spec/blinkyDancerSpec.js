@@ -71,3 +71,17 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+describe('BoatDancer', function() {
+  var dancingBoat;
+  
+  beforeEach(function() {
+    dancingBoat = new BoatDancer(10, 20);
+  });
+
+  it('should have a jQuery $node object', function() {
+    expect(dancingBoat.$node).to.be.an.instanceof(jQuery);
+  });
+});
+
+

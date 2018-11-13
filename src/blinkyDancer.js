@@ -19,9 +19,7 @@
 // };
 
 var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  debugger;
   MakeDancer.call(this, top, left, timeBetweenSteps);
-   
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
