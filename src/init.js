@@ -46,7 +46,7 @@ $(document).ready(function() {
     var boat = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 2000
+      100
     );
     
     $('body').append(boat.$node);
