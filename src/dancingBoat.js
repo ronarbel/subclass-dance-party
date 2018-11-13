@@ -13,30 +13,21 @@ BoatDancer.prototype.constructor = BoatDancer;
 BoatDancer.prototype.oldStep = MakeDancer.prototype.step;
 BoatDancer.prototype.step = function() {
   BoatDancer.prototype.oldStep.call(this);
+  var angle = 0;
+  
   if (this.left <= 20) {
-    //this.setPosition(this.top, this.left += 20);
     this.movingLeft = false;
+    angle = 180;
+    this.$node.css('transform','rotateY(' + angle + 'deg)');
   } else if (this.left >= $("body").width() - 200) {
-    //this.setPosition(this.top, this.left -= 20);
     this.movingLeft = true;
-  }
+    angle = 0;
+    this.$node.css('transform','rotateY(' + angle + 'deg)');
+  };
   
   if (this.movingLeft) {
     this.setPosition(this.top, this.left -= 40);
   } else {
     this.setPosition(this.top, this.left += 40);
-  }
-  
-  // if (this.movingLeft) {
-  //   this.setPosition(this.top, this.left -= 20);
-  //   if (this.left <= 20) {
-  //     this.movingLeft = false;
-  //   } 
-  // } else {
-  //   this.setPosition(this.top, this.left += 20);
-  //   if (this.left >= $("body").width() - 20) {
-  //     this.movingLeft = true;
-  //   } 
-  // }
-  
+  };
 };
