@@ -3,8 +3,10 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#e23e3e;
   font-size: 18px;
+  background-image: url("https://asset.barrons.com/public/resources/images/ON-CF529_beach_M_20170804164810.jpg");
+  background-repeat: no-repeat;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
