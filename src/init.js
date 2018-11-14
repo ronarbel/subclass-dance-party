@@ -67,7 +67,15 @@ $(document).ready(function() {
     
     $('body').append(coconut.$node);
     
-    window.dancers.push(coconut);
+    window.dancers.push(coconut)
+  });
+  
+  
+  
+  $(".lineUp").on('click', function(event) {
+    window.dancers.forEach(function(dancer) {
+      dancer.lineUp();
+    })
   });
 });
 

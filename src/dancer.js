@@ -45,12 +45,10 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
 };
 
 MakeDancer.prototype.step = function(timeBetweenSteps) {
-  // the basic dancer doesn't do anything interesting at all on each step,
-  // it just schedules the next step
+
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
   
 };
-//dancer.step();
 
 MakeDancer.prototype.setPosition = function(top, left) {
   // Use css top and left properties to position our <span> tag
@@ -62,6 +60,10 @@ MakeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+MakeDancer.prototype.lineUp = function() {
+  this.setPosition(top, $("body").width()/2);
+}
 
 
 
