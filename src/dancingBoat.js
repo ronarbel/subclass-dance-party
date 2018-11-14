@@ -1,11 +1,14 @@
 var BoatDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="speedBoat"><img src="http://www.animatedimages.org/data/media/1002/animated-boat-image-0113.gif" ></img></span>');
+  boatInstance = this;
+  this.$node.on('click', function(event) {
+    boatInstance.isMoving = false;
+  });
   this.setPosition(top, left);
   this.top = top;
   this.left = left;
   this.movingLeft = true;
-  /// added
   this.isMoving = true;
 };
 BoatDancer.prototype = Object.create(MakeDancer.prototype);
@@ -13,7 +16,7 @@ BoatDancer.prototype.constructor = BoatDancer;
 
 BoatDancer.prototype.oldStep = MakeDancer.prototype.step;
 BoatDancer.prototype.step = function() {
-  /// added
+
   BoatDancer.prototype.oldStep.call(this);
   
   var angle = 0;

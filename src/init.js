@@ -35,6 +35,8 @@ $(document).ready(function() {
     );
     
     $('body').append(dancer.$node);
+    
+    window.dancers.push(dancer);
   });
   
   
@@ -78,6 +80,19 @@ $(document).ready(function() {
       dancer.isMoving = false;
       dancer.lineUp();
     })
+  });
+  
+  
+  $(".bunchUp").on('click', function(event) {
+    window.dancers.forEach(function(coconut) {
+      if (coconut instanceof CoconutDancer) {
+        window.dancers.forEach(function(speedBoat) {
+          if (speedBoat instanceof BoatDancer) {
+            coconut.setPosition(speedBoat.top, speedBoat.left);
+          }
+        });
+      }
+    });
   });
 });
 
