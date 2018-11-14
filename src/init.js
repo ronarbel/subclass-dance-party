@@ -54,6 +54,7 @@ $(document).ready(function() {
     window.dancers.push(boat);
   });
   
+  
   $(".addCoconutButton").on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
@@ -74,6 +75,7 @@ $(document).ready(function() {
   
   $(".lineUp").on('click', function(event) {
     window.dancers.forEach(function(dancer) {
+      dancer.isMoving = false;
       dancer.lineUp();
     })
   });
